@@ -1,5 +1,4 @@
-	// Required imports
-import { ApiPromise, WsProvider } from '@polkadot/api';
+import { ApiPromise, WsProvider } from "@polkadot/api";
 import yargs from "yargs";
 
 async function createApi(url: string) {
@@ -31,6 +30,7 @@ async function test_func (ws_url: string) {
   ]);
 
   console.log(`You are connected to chain ${chain} using ${nodeName} v${nodeVersion}`);
+  process.exit(0);
 }
 
 function run() {
@@ -71,4 +71,5 @@ try {
 } catch (err) {
   console.log("Error");
   console.error(err);
+  process.exit(1);
 }
